@@ -14,9 +14,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "test": "jest",
+    "eject": "react-scripts eject",
     "test:coverage": "jest --coverage"
   },
   "eslintConfig": {
@@ -38,6 +37,7 @@
     ]
   },
   "devDependencies": {
+    "cypress": "^12.17.2",
     "istanbul-lib-coverage": "^3.2.0",
     "istanbul-lib-instrument": "^6.0.0",
     "jest": "^27.5.1"
