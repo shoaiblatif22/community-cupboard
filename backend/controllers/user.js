@@ -8,7 +8,7 @@ const saltRounds = 10; // Number of salt rounds for bcrypt hashing
 
 const UsersController = {
     Create: (req, res) => {
-      const { first_name, last_name, full_address, email, username, password} = req.body;
+      const { first_name, last_name, full_address, email, password} = req.body;
   
       // Generate a hash for the password
       bcrypt.hash(password, saltRounds, (err, hashedPassword) => {
