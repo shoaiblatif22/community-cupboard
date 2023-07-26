@@ -2,6 +2,11 @@ require('dotenv').config()
 const express = require("express");
 const database_connection = require('./db/database_connection')
 const User = require('./models/user')
+const app = express();
+const apiRouter = require('./routes/user');
+
+app.use('/user', apiRouter);
+
 
 async function run() {
 
