@@ -17,12 +17,46 @@ body {
 }
 
 .header-left {
-  margin-left: 10px;
+  display: flex;
+  align-items: center;
 }
 
-.header-left a {
-  text-decoration: none;
-  color: #333;
+.header-left button {
+  /* Apply styles to the "Home" button */
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.header-left button:hover {
+  /* Add hover effect if desired */
+  background-color: #45a049;
+}
+
+.header-left button:focus {
+  /* Add focus effect if desired */
+  outline: none;
+  box-shadow: 0 0 0 2px #4CAF50;
+}
+
+.header-left button:active {
+  /* Add active (click) effect if desired */
+  background-color: #3e8e41;
+}
+
+/* Center the text in the button */
+.header-left button {
+  display: flex;
+  align-items: center;
+}
+
+.header-left button svg {
+  /* Add optional styling for the SVG icon (if you have one) */
+  margin-right: 8px; /* Adjust this value for spacing between icon and text */
 }
 
 .header-right {

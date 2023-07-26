@@ -7,7 +7,8 @@ const App = () => {
       {/* Header section */}
       <header>
         <div className="header-left">
-          <a href="#">Home</a>
+          {/* Change the anchor element to a button */}
+          <button className="home-button">Home</button>
         </div>
         <div className="header-right">
           <button>About</button>
