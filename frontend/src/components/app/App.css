@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
+/* App.css */
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-container {
+  /* Add any container styles you need for the whole page */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+.header-left {
+  margin-left: 10px;
+}
+
+.header-left a {
+  text-decoration: none;
+  color: #333;
+}
+
+.header-right {
+  display: flex;
+  align-items: center; /* Center the buttons vertically */
+}
+
+.header-right button {
+  background-color: #4CAF50;
   color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 5px; /* Adjust this value to add spacing between buttons */
 }
 
-.App-link {
-  color: #61dafb;
+/* Push the buttons to the right side */
+.header-left,
+.header-right {
+  flex: 1; /* This will make them share the available space equally */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header-right {
+  justify-content: flex-end; /* This will push the buttons to the right */
+}
+
+.logo-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.logo-container img {
+  max-width: 200px;
+  height: auto;
 }
