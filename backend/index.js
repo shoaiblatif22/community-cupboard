@@ -5,9 +5,12 @@ const User = require('./models/user')
 const app = express();
 const apiRouter = require('./routes/user');
 const Notification = require('./models/notifications');
+const Order = require('./models/orders');
+
 
 app.use('/user', apiRouter);
 app.use('/notification', apiRouter);
+app.use('/order', apiRouter);
 
 
 
@@ -19,7 +22,20 @@ john.save()
 
 const order = new Notification({ order_recieved: 'Your order has been recieved'})
 order.save()
+
+const new_order = new Order({
+    user: '5f06a774050e59000149e254',
+    products: [
+      {
+        product: 'milk',
+        quantity: 1,
+      },
+    ],
+  });
+  await new_order.save();
 }
+
+
 
 run()
 
