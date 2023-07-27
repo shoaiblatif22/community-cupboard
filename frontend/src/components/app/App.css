@@ -1,0 +1,120 @@
+/* App.css */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  /* Add any container styles you need for the whole page */
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-left button {
+  /* Apply styles to the "Home" button */
+  background-color: #5097a0;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+
+.header-left button:hover {
+  /* Add hover effect if desired */
+  background-color: #966985;
+}
+
+.header-left button:focus {
+  /* Add focus effect if desired */
+  outline: none;
+  box-shadow: 0 0 0 4px #5097a0;
+}
+
+.header-left button:active {
+  /* Add active (click) effect if desired */
+  background-color: #5097a0;
+}
+
+/* Center the text in the button */
+.header-left button {
+  display: flex;
+  align-items: center;
+}
+
+.header-left button svg {
+  /* Add optional styling for the SVG icon (if you have one) */
+  margin-right: 8px;
+  /* Adjust this value for spacing between icon and text */
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  /* Center the buttons vertically */
+}
+
+.header-right button {
+  background-color: #5097a0;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 5px;
+  /* Adjust this value to add spacing between buttons */
+}
+
+/* Push the buttons to the right side */
+.header-left,
+.header-right {
+  flex: 1;
+  /* This will make them share the available space equally */
+}
+
+.header-right {
+  justify-content: flex-end;
+  /* This will push the buttons to the right */
+}
+
+/* Add spacing between buttons in the header */
+.header-right button:not(:last-child) {
+  margin-right: 5px;
+}
+
+.logo-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.logo-container img {
+  max-width: auto;
+  height: 500px;
+}
+
+.aboutUs-container {
+  padding: 20px;
+  border: 2px solid #ccc;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Increase the font size for the About Us content */
+.aboutUs {
+  font-size: 18px;
+  line-height: 1.6;
+}
