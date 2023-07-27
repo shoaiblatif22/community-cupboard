@@ -1,6 +1,6 @@
 const User = require('../models/user')
 const bcrypt = require('bcrypt');
-const JWT = require("jsonwebtoken");
+// const JWT = require("jsonwebtoken");
 
 
 const saltRounds = 10; // Number of salt rounds for bcrypt hashing
