@@ -9,9 +9,9 @@ import {
 export const Routes = () => {
     return (
         <Router>
-            <Router>
-                SignUp
-            </Router>
+            <Routes>
+                <SignUp></SignUp>
+            </Routes>
 
             </Router>
     )
