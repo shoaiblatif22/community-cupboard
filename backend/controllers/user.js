@@ -32,9 +32,30 @@ const UsersController = {
             return res.status(201).json({ message: "OK" });
           }
         });
+
+const User = mongoose.model("User", UserSchema);
+
+async function login(req, res) {
+  const email = req.body.email;
+  const password = req.body.password;
+
+  const user = await User.findOne({ email });
+  if (!user) {
+    res.status(401).json({ message: "Invalid email or password" });
+    return;
+  }
+
+  if (!user.comparePassword(password)) {
+    res.status(401).json({ message: "Invalid email or password" });
+    return;
+  }
+
+  const token = jwt.sign({ userId: user._id }, secret, { expiresIn: 30 });
+  res.json({ token });
+}
         
       });
     },
   };
 
-  module.exports = UsersController
+module.exports = UsersController
