@@ -28,7 +28,15 @@ const order = new Notification({ order_recieved: 'Your order has been recieved'}
 order.save()
 
 const new_order = new Order({
-  user: 'johndoe',
+  user: [ {
+    first_name: 'john',
+    last_name: 'forster',
+    email: 'test@gmail.com',
+    password: 'hello',
+    full_address: 'birmingham'
+  }
+    
+  ],
   products: [
     {
       product: '5f06a774050e59000149e254',
