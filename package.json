@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "framer-motion": "^10.13.2",
     "mongodb": "^5.7.0",
     "mongoose": "^7.4.1"
   }
