@@ -1,5 +1,6 @@
 const JWT = require("jsonwebtoken");
 const secret = process.env.JWT_SECRET;
+//update
 
 class TokenGenerator {
   static jsonwebtoken(user_id) {
