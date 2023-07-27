@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import AppRoutes from "../Routes";
 import './App.css'; // Import the corresponding CSS file
 import { motion } from "framer-motion";
 import CClogo from "./cc-logo.jpg.png";
@@ -85,6 +86,7 @@ const App = () => {
             animate="animate"
           />
         </div>
+        <AppRoutes/>
         <SignUpForm />
     
         {/* Add your other content here */}
