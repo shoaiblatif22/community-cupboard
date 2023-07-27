@@ -6,11 +6,13 @@ const app = express();
 const apiRouter = require('./routes/user');
 const Notification = require('./models/notifications');
 const Order = require('./models/orders');
+// const Product = require('./models/products')
 
 
 app.use('/user', apiRouter);
 app.use('/notification', apiRouter);
 app.use('/order', apiRouter);
+// app.use('/product', apiRouter)
 
 
 
