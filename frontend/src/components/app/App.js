@@ -20,19 +20,17 @@ const App = () => {
   return (
     <div className="app-container">
       {/* Header section */}
-      <header>
+      <header className="header-container">
         <div className="header-left">
-          {/* Home button wrapped in a div */}
-          <div className="header-button">
-            <motion.button
-              className="home-button"
-              variants={buttonVariants}
-              whileHover="whileHover"
-              whileTap="whileTap"
-            >
-              Home
-            </motion.button>
-          </div>
+          {/* Home button */}
+          <motion.button
+            className="header-button"
+            variants={buttonVariants}
+            whileHover="whileHover"
+            whileTap="whileTap"
+          >
+            Home
+          </motion.button>
         </div>
         <div className="header-right">
           {/* Rest of the buttons */}
@@ -49,6 +47,14 @@ const App = () => {
             whileTap="whileTap"
           >
             Login
+          </motion.button>
+          {/* Add the Signup button */}
+          <motion.button
+            variants={buttonVariants}
+            whileHover="whileHover"
+            whileTap="whileTap"
+          >
+            Signup
           </motion.button>
           <motion.button
             variants={buttonVariants}

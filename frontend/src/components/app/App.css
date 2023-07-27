@@ -24,33 +24,28 @@ body {
 .header-left button {
   /* Apply styles to the "Home" button */
   background-color: #5097a0;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-    border-radius: 4px;
-    margin-right: 5px;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 5px;
 }
 
 .header-left button:hover {
   /* Add hover effect if desired */
   background-color: #966985;
-  ;
 }
 
 .header-left button:focus {
   /* Add focus effect if desired */
   outline: none;
   box-shadow: 0 0 0 4px #5097a0;
-  ;
-  ;
 }
 
 .header-left button:active {
   /* Add active (click) effect if desired */
   background-color: #5097a0;
-  ;
-  ;
 }
 
 /* Center the text in the button */
@@ -89,10 +84,14 @@ body {
   /* This will make them share the available space equally */
 }
 
-
 .header-right {
   justify-content: flex-end;
   /* This will push the buttons to the right */
+}
+
+/* Add spacing between buttons in the header */
+.header-right button:not(:last-child) {
+  margin-right: 5px;
 }
 
 .logo-container {
@@ -104,6 +103,7 @@ body {
   max-width: auto;
   height: 500px;
 }
+
 .aboutUs-container {
   padding: 20px;
   border: 2px solid #ccc;
