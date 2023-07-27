@@ -6,6 +6,8 @@ const app = express();
 const apiRouter = require('./routes/user');
 const Notification = require('./models/notifications');
 const Order = require('./models/orders');
+const mongoose = require('mongoose');
+
 // const Product = require('./models/products')
 
 
@@ -26,14 +28,14 @@ const order = new Notification({ order_recieved: 'Your order has been recieved'}
 order.save()
 
 const new_order = new Order({
-    user: '5f06a774050e59000149e254',
-    products: [
-      {
-        product: 'milk',
-        quantity: 1,
-      },
-    ],
-  });
+  user: 'johndoe',
+  products: [
+    {
+      product: '5f06a774050e59000149e254',
+      quantity: 1,
+    },
+  ],
+});
   await new_order.save();
 }
 

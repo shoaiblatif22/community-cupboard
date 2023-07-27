@@ -53,11 +53,9 @@ async function login(req, res) {
   const token = jwt.sign({ userId: user._id }, secret, { expiresIn: 30 });
   res.json({ token });
 }
-
-module.exports = { login };
         
       });
     },
   };
 
-  module.exports = UsersController
+module.exports = UsersController
