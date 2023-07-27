@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import './App.css'; // Import the corresponding CSS file
 import { motion } from "framer-motion";
 import CClogo from "./cc-logo.jpg.png";
+import SignUpForm from "../SignUp/SignUp.js";
 
 const App = () => {
   const buttonVariants = {
@@ -84,6 +85,8 @@ const App = () => {
             animate="animate"
           />
         </div>
+        <SignUpForm />
+    
         {/* Add your other content here */}
         <div className="aboutUs-container">
           <div className="aboutUs">

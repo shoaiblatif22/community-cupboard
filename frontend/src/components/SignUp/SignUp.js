@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./SignUpForm.css";
-import Modal from "../common/Modal";
+import "./SignUp.css";
+import Modal from "../Modal/Modal";
 
 const SignUpForm = ({ onClose }) => {
   const [email, setEmail] = useState("");
