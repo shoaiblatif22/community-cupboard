@@ -85,7 +85,7 @@ const App = () => {
             animate="animate"
           />
         </div>
-        <SignUpForm />
+        {/* <SignUpForm /> */}
     
         {/* Add your other content here */}
         <div className="aboutUs-container">
