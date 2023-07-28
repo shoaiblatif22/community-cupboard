@@ -1,42 +1,36 @@
 import React, { useState } from "react";
-import "./SignUp.css";
+import Axios from "axios";
+import "./SignUp.css"; // Import the corresponding CSS file
 import Modal from "../Modal/Modal";
 
 const SignUpForm = ({ onClose }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
+  const [formData, setFormData] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    password: "",
+    full_address: "",
+  });
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
 
-    fetch("/users", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-        username: username,
-      }),
-    }).then((response) => {
-      if (response.status === 201) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Make the API call to the backend
+    Axios.post("/user/register", formData)
+      .then((response) => {
+        console.log(response.data.message); // Handle the response as needed
+        // Optionally, you can handle success here (e.g., show a success message, redirect, etc.)
         onClose(); // Close the modal on successful submission
-      }
-    });
-  };
-
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
+      })
+      .catch((error) => {
+        console.log(error.response.data.message); // Handle the error as needed
+        // Optionally, you can handle the error here (e.g., show an error message)
+      });
   };
 
   return (
@@ -47,37 +41,47 @@ const SignUpForm = ({ onClose }) => {
         </button>
         <div className="signup-form">
           <form onSubmit={handleSubmit}>
-            <label>
-              <input
-                placeholder="Email"
-                id="email"
-                type="text"
-                value={email}
-                onChange={handleEmailChange}
-                required
-              />
-            </label>
-            <label>
-              <input
-                placeholder="Password"
-                id="password"
-                type="password"
-                value={password}
-                onChange={handlePasswordChange}
-                required
-              />
-            </label>
-            <label>
-              <input
-                placeholder="Username"
-                id="username"
-                type="text"
-                value={username}
-                onChange={handleUsernameChange}
-                required
-              />
-            </label>
-            <input id="submit" type="submit" value="Submit" />
+            <input
+              type="text"
+              name="first_name"
+              value={formData.first_name}
+              onChange={handleChange}
+              placeholder="First Name"
+              required // Adding required attribute to make it a required field
+            />
+            <input
+              type="text"
+              name="last_name"
+              value={formData.last_name}
+              onChange={handleChange}
+              placeholder="Last Name"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Email"
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              placeholder="Password"
+              required
+            />
+            <input
+              type="text"
+              name="full_address"
+              value={formData.full_address}
+              onChange={handleChange}
+              placeholder="Full Address"
+              required
+            />
+            <button type="submit">Sign Up</button>
           </form>
         </div>
       </div>

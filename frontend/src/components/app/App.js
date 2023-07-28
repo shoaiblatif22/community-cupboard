@@ -1,10 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import AppRoutes from "../Routes";
 import './App.css'; // Import the corresponding CSS file
 import { motion } from "framer-motion";
 import CClogo from "./cc-logo.jpg.png";
 import SignUpForm from "../SignUp/SignUp.js";
 
 const App = () => {
+  const [isSignUpOpen, setIsSignUpOpen] = useState(false);
+
+  const handleSignUpButtonClick = () => {
+    setIsSignUpOpen(true);
+  };
+
+  const handleCloseSignUp = () => {
+    setIsSignUpOpen(false);
+  };
+
   const buttonVariants = {
     whileHover: { scale: 1.1 }, // Scale the button up on hover
     whileTap: { scale: 0.9 }    // Scale the button down on tap
@@ -54,6 +65,7 @@ const App = () => {
             variants={buttonVariants}
             whileHover="whileHover"
             whileTap="whileTap"
+            onClick={handleSignUpButtonClick} // Open the sign-up form when clicked
           >
             Signup
           </motion.button>
@@ -85,7 +97,9 @@ const App = () => {
             animate="animate"
           />
         </div>
-        <SignUpForm />
+        <AppRoutes/>
+
+        {isSignUpOpen && <SignUpForm onClose={handleCloseSignUp} />} {/* Render SignUpForm only when isSignUpOpen is true */}
     
         {/* Add your other content here */}
         <div className="aboutUs-container">
