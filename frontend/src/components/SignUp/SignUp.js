@@ -1,5 +1,3 @@
-// SignUp.js
-
 import React, { useState } from "react";
 import Axios from "axios";
 import "./SignUp.css"; // Import the corresponding CSS file
