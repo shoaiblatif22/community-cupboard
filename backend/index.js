@@ -21,14 +21,15 @@ app.use('/product', apiRouter)
 async function run() {
 
 await database_connection()
-const john = new User({first_name: 'John', last_name: 'Forster', email:'test@email.com', password: 'password', full_address: 'Zetland House'})
-john.save()
+const user = new User({first_name: 'John', last_name: 'Forster', email:'test@email.com', password: 'password', full_address: 'Zetland House'})
+const savedUser = await user.save() // this saves the data into a variable which we can then view by runing console.log
+//console.log(name)
 
 const order = new Notification({ order_recieved: 'Your order has been recieved'})
 order.save()
 
 const new_order = new Order({
-  user: 'johndoe',
+  user: savedUser._id, // calls on the function (savedUser) created in line 25 to access the object id form the database
   products: [
     {
       product: '5f06a774050e59000149e254',
