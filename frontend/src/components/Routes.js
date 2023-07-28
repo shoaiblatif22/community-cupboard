@@ -4,8 +4,8 @@ import LogInForm from "./login/LoginForm";
 import LogOutForm from "./login/logoutForm";
 import AboutUs from "./aboutUs/AboutUs";
 import ContactUs from "./contactUs/ContactUs";
-import Basket from "./Basket/Basket";
-import Packages from "./packages/Packages";
+import Basket from "./Basket/basket";
+import Packages from "./Packages/packages";
 import Orders from "./orders/Orders";
 
 const AppRoutes = () => {
