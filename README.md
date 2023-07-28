@@ -29,3 +29,9 @@ Some nice to haves:
 6: Add voucher/ referral option
 7: Newsletter
 8: On orders tab, user has an option to re-order
+
+
+To set up:
+
+npm install
+npm install axios
