@@ -1,4 +1,4 @@
-export const AboutUs = () => {
+const AboutUs = () => {
     return (
         <h1>Welcome to Community Cupboard!
 
@@ -27,3 +27,5 @@ export const AboutUs = () => {
             Thank you for being a part of the Community Cupboard family. Together, we can nourish not only bodies but also hearts and souls.</h1>
     )
 }
+
+export default AboutUs;

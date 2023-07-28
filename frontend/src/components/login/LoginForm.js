@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./LoginForm.css";
-import Modal from "../common/Modal";
+import Modal from "../Modal/Modal";
 import jwt_decode from "jwt-decode";
 
 const LogInForm = ({ navigate, onClose, handleSuccessfulLogin, setUserId }) => {
