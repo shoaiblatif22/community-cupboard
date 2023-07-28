@@ -8,14 +8,19 @@ const Notification = require('./models/notifications');
 const Order = require('./models/orders');
 const mongoose = require('mongoose');
 const Product = require('./models/products'); 
+const cors = require('cors'); //added this line 
 
 
+// Enable cors middleware
+app.use(cors());
+
+// Middleware to parse JSON data in request bodies
+app.use(express.json()); // Added to parse JSON data
 
 app.use('/user', apiRouter);
 app.use('/notification', apiRouter);
 app.use('/order', apiRouter);
 app.use('/product', apiRouter)
-
 
 
 async function run() {
@@ -43,6 +48,11 @@ const new_order = new Order({
 
 
 run()
+// Added this too
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
 
 //Needs to be wrapped in async function because we want to wait
 //for this to be done. We cant use await outside async function

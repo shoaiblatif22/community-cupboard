@@ -5,7 +5,7 @@ import LogOutForm from "./login/logoutForm";
 import AboutUs from "./aboutUs/AboutUs";
 import ContactUs from "./contactUs/ContactUs";
 import Basket from "./Basket/basket";
-import Packages from "./packages/packages";
+import Packages from "./Packages/packages";
 import Orders from "./orders/Orders";
 
 const AppRoutes = () => {
