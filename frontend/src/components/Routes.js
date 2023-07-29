@@ -9,6 +9,7 @@ import Basket from "./Basket/basket";
 import Packages from "./packages/packages";
 import Orders from "./orders/Orders";
 import GetInvolved from "./getInvolved/getInvolved"
+import Notifications from "./notifications/notifications.js";
 
 const AppRoutes = () => {
   return (
@@ -24,6 +25,7 @@ const AppRoutes = () => {
         <Route path="/basket" element={<Basket />} />
         <Route path="/packages" element={<Packages />} />
         <Route path="/orders" element={<Orders />} />
+        <Route path="/notifications" element={<Notifications />} />
       </Routes>
   );
 };

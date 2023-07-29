@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./SignUp.css"; // Import the corresponding CSS file
 import Modal from "../Modal/Modal";
+
+
 const SignUpForm = ({ onClose }) => {
   const [formData, setFormData] = useState({
     first_name: "",
