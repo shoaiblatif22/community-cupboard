@@ -1,12 +1,17 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import AppRoutes from "../Routes";
 import './App.css'; // Import the corresponding CSS file
 import { motion } from "framer-motion";
 import CClogo from "./cc-logo.jpg.png";
 import SignUpForm from "../SignUp/SignUp.js";
+import LogInForm from "../login/LoginForm";
+
+
 
 const App = () => {
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleSignUpButtonClick = () => {
     setIsSignUpOpen(true);
@@ -14,6 +19,34 @@ const App = () => {
 
   const handleCloseSignUp = () => {
     setIsSignUpOpen(false);
+  };
+
+  const [isLogInOpen, setIsLogInOpen] = useState(false);
+ 
+
+  const handleLogInButtonClick = () => {
+    setIsLogInOpen(true);
+  };
+
+  const handleCloseLogIn = () => {
+    setIsLogInOpen(false);
+  };
+
+  const handleHomeButtonClick = () => {
+    navigate("/home"); // Use navigate function to navigate to "/aboutus" path
+  };
+
+
+   const handleAboutButtonClick = () => {
+    navigate("/aboutus"); // Use navigate function to navigate to "/aboutus" path
+  };
+
+  const handleContactUsButtonClick = () => {
+    navigate("/contactus")
+  };
+
+  const handleGetInvolvedButtonClick = () => {
+    navigate("/getinvolved")
   };
 
   const buttonVariants = {
@@ -40,23 +73,28 @@ const App = () => {
             variants={buttonVariants}
             whileHover="whileHover"
             whileTap="whileTap"
+            onClick={handleHomeButtonClick}
           >
             Home
           </motion.button>
         </div>
         <div className="header-right">
           {/* Rest of the buttons */}
-          <motion.button
+
+            <motion.button
             variants={buttonVariants}
             whileHover="whileHover"
             whileTap="whileTap"
-          >
+            onClick={handleAboutButtonClick}
+  
+          > 
             About
           </motion.button>
           <motion.button
             variants={buttonVariants}
             whileHover="whileHover"
             whileTap="whileTap"
+            onClick={handleLogInButtonClick}
           >
             Login
           </motion.button>
@@ -73,6 +111,7 @@ const App = () => {
             variants={buttonVariants}
             whileHover="whileHover"
             whileTap="whileTap"
+            onClick={handleGetInvolvedButtonClick}
           >
             Get Involved
           </motion.button>
@@ -80,6 +119,7 @@ const App = () => {
             variants={buttonVariants}
             whileHover="whileHover"
             whileTap="whileTap"
+            onClick={handleContactUsButtonClick}
           >
             Contact Us
           </motion.button>
@@ -97,12 +137,11 @@ const App = () => {
             animate="animate"
           />
         </div>
-        <AppRoutes/>
-
+        <AppRoutes /> 
         {isSignUpOpen && <SignUpForm onClose={handleCloseSignUp} />} {/* Render SignUpForm only when isSignUpOpen is true */}
-    
+        {isLogInOpen && <LogInForm onClose={handleCloseLogIn} />} 
         {/* Add your other content here */}
-        <div className="aboutUs-container">
+        {/* <div className="aboutUs-container">
           <div className="aboutUs">
             Welcome to Community Cupboard!
 
@@ -119,7 +158,7 @@ const App = () => {
             <br></br>How It Works:
             Community Cupboard operates on a simple principle - volunteers from the community step up to lend a hand. If you need assistance in collecting a food package, our compassionate volunteers will be there to help.<br></br> They will not only deliver the package to your doorstep but will also unpack the goods for you, ensuring you receive the care and attention you deserve.
 
-            {/* <br></br>Join Our Community:
+            <br></br>Join Our Community:
             Whether you are someone in need of support or a community member looking to make a difference, there's a place for you at Community Cupboard. Together, we can build a stronger, more caring community where no one feels alone or goes hungry.
 
             <br></br>Get Involved:
@@ -128,9 +167,9 @@ const App = () => {
             <br></br>Contact Us:
             If you need assistance or want to join our cause, don't hesitate to reach out. You can find our contact information on the "Contact" page of our website.
 
-            Thank you for being a part of the Community Cupboard family. Together, we can nourish not only bodies but also hearts and souls. */}
+            Thank you for being a part of the Community Cupboard family. Together, we can nourish not only bodies but also hearts and souls.
           </div>
-        </div>
+        </div> */}
       </main>
     </div>
   );
