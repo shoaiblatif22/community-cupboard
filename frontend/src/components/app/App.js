@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import CClogo from "./cc-logo.jpg.png";
 import SignUpForm from "../SignUp/SignUp.js";
 import LogInForm from "../login/LoginForm";
-
+import Notifications from '../notifications/notifications';
 
 
 const App = () => {
@@ -174,6 +174,7 @@ const App = () => {
           />
         </div>
         <AppRoutes /> 
+        <Notifications />
         {isSignUpOpen && <SignUpForm onClose={handleCloseSignUp} />} {/* Render SignUpForm only when isSignUpOpen is true */}
         {isLogInOpen && <LogInForm onClose={handleCloseLogIn} />} 
         {/* Add your other content here */}

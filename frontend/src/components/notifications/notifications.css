@@ -1,0 +1,70 @@
+/* Notifications.css */
+.notifications-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.bell-icon {
+    position: relative;
+}
+
+.bell-icon i {
+    font-size: 24px;
+}
+
+.badge {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    padding: 4px;
+    border-radius: 50%;
+}
+
+/* Modal Styling */
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
