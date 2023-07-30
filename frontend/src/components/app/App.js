@@ -53,6 +53,10 @@ const App = () => {
     navigate("/notifications")
   };
 
+  const handlePackagesButtonClick = () => {
+    navigate("/packages")
+  };
+
   const handleBasketButtonClick = () => {
     navigate("/basket")
   };
@@ -138,6 +142,14 @@ const App = () => {
             onClick={handleNotificationsButtonClick}
           >
             Notifications
+          </motion.button>
+          <motion.button
+            variants={buttonVariants}
+            whileHover="whileHover"
+            whileTap="whileTap"
+            onClick={handlePackagesButtonClick}
+          >
+            Packages
           </motion.button>
            <motion.button
             variants={buttonVariants}
