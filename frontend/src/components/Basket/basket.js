@@ -1,4 +1,3 @@
-
 import React from 'react';
 import './Basket.css';
 
@@ -9,7 +8,6 @@ const Basket = ({ selectedPackage, handleCheckout }) => {
       {selectedPackage ? (
         <div className="selected-package">
           <div className="selected-package-image">
-            {/* Placeholder image */}
             <img src={selectedPackage.imageUrl} alt={selectedPackage.title} />
           </div>
           <div className="selected-package-info">
