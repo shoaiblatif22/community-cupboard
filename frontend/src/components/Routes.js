@@ -8,7 +8,7 @@ import LogOutForm from "./login/logoutForm";
 import AboutUs from "./aboutUs/AboutUs";
 import ContactUs from "./contactUs/ContactUs";
 import Basket from "./Basket/basket";
-import Packages from "./packages/packages.js";
+import Packages from "./Packages/packages.js";
 import Orders from "./orders/Orders";
 
 import GetInvolved from "./getInvolved/getInvolved"
