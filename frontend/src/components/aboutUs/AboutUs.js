@@ -1,3 +1,4 @@
+
 import './AboutUs.css'; // Import the CSS file for styling
 
 const AboutUs = () => {
@@ -59,3 +60,4 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+

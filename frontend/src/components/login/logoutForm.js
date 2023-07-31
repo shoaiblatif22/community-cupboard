@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./logoutForm.css";
 import Modal from "../Modal/Modal";
@@ -38,3 +39,4 @@ const LogOutForm = ({ onClose, setIsUserLoggedIn, setUserId }) => {
 };
 
 export default LogOutForm;
+

@@ -1,5 +1,7 @@
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import AppRoutes from "../Routes";
 import './App.css'; // Import the corresponding CSS file
 import { motion } from "framer-motion";
@@ -173,10 +175,12 @@ const App = () => {
             animate="animate"
           />
         </div>
+
         <AppRoutes /> 
         <Notifications />
         {isSignUpOpen && <SignUpForm onClose={handleCloseSignUp} />} {/* Render SignUpForm only when isSignUpOpen is true */}
         {isLogInOpen && <LogInForm onClose={handleCloseLogIn} />} 
+
         {/* Add your other content here */}
        
       </main>

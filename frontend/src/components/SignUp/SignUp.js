@@ -1,4 +1,7 @@
+// SignUp.js
+
 import React, { useState } from "react";
+
 import "./SignUp.css"; // Import the corresponding CSS file
 import Modal from "../Modal/Modal";
 
@@ -11,10 +14,12 @@ const SignUpForm = ({ onClose }) => {
     password: "",
     full_address: "",
   });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Make the API call to the backend using fetch
@@ -33,14 +38,17 @@ const SignUpForm = ({ onClose }) => {
       })
       .then((data) => {
         console.log(data.message); // Handle the response as needed
+
         // Optionally, you can handle success here (e.g., show a success message, redirect, etc.)
         onClose(); // Close the modal on successful submission
       })
       .catch((error) => {
+
         console.error("Error registering user:", error);
         // Optionally, you can handle the error here (e.g., show an error message)
       });
   };
+
   return (
     <Modal open={true} onClose={onClose}>
       <div className="modal-content">
