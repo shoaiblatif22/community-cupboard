@@ -9,6 +9,8 @@ import CClogo from "./cc-logo.jpg.png";
 import SignUpForm from "../SignUp/SignUp.js";
 import LogInForm from "../login/LoginForm";
 import Notifications from '../notifications/notifications';
+import Carousel from "../banner/carousel";
+
 
 
 const App = () => {
@@ -34,9 +36,9 @@ const App = () => {
     setIsLogInOpen(false);
   };
 
-  const handleHomeButtonClick = () => {
-    navigate("/home"); // Use navigate function to navigate to "/aboutus" path
-  };
+  // const handleHomeButtonClick = () => {
+  //   navigate("/home"); // Use navigate function to navigate to "/aboutus" path
+  // };
 
 
    const handleAboutButtonClick = () => {
@@ -68,13 +70,25 @@ const App = () => {
     whileTap: { scale: 0.9 }    // Scale the button down on tap
   };
 
-  const logoVariants = {
-    animate: {
-      scale: [1, 2, 2, 1, 1],
-      rotate: [0, 0, 270, 270, 0],
-      borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-    }
-  };
+  // const logoVariants = {
+  //   animate: {
+  //     scale: [1, 2, 2, 1, 1],
+  //     rotate: [0, 0, 270, 270, 0],
+  //     borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+  //   }
+  // };
+
+  const images = [
+  "frontend/src/components/banner/bag_food.jpeg",
+  "frontend/src/components/banner/community-food.jpeg",
+  "frontend/src/components/banner/community.png",
+  "frontend/src/components/banner/food_bank1.jpeg",
+  "frontend/src/components/banner/food_bank2.webp",
+  "frontend/src/components/banner/food_bank3.jpeg",
+  "frontend/src/components/banner/food_bank4.webp",
+  ""
+];
+
 
   return (
     <div className="app-container">
@@ -82,15 +96,16 @@ const App = () => {
       <header className="header-container">
         <div className="header-left">
           {/* Home button */}
-          <motion.button
-            className="header-button"
-            variants={buttonVariants}
-            whileHover="whileHover"
-            whileTap="whileTap"
-            onClick={handleHomeButtonClick}
-          >
-            Home
-          </motion.button>
+          <a href="/home">
+            <img
+              src={CClogo}
+              alt="Logo"
+              style={{
+                width: "250px", // Adjust the width of the logo as per your preference
+                height: "auto", // This will maintain the aspect ratio
+              }}
+            />
+          </a>
         </div>
         <div className="header-right">
           {/* Rest of the buttons */}
@@ -166,14 +181,15 @@ const App = () => {
 
       {/* Main content section */}
       <main>
+        <Carousel images={images} />
         <div className="logo-container">
           {/* Add your logo image here */}
-          <motion.img
+          {/* <motion.img
             src={CClogo}
             alt="Logo"
             variants={logoVariants}
             animate="animate"
-          />
+          /> */}
         </div>
 
         <AppRoutes /> 

@@ -1,26 +1,28 @@
 import React from 'react';
 import './Packages.css';
+import mixedGroceriesImage from '../packages/mixed_groceries.jpeg';
+import mixedGroceriesVeganImage from '../packages/mixed_groceries_vegan.webp';
 
 const Packages = () => {
   const packages = [
     {
-      title: 'Mixed groceries for 1',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      imageUrl: 'path-to-image-1.jpg', // Placeholder image for Package 1
+       title: 'Mixed groceries for 1',
+      description: 'Assortment of household goods and food for 1.',
+      imageUrl: mixedGroceriesImage,
     },
     {
       title: 'Mixed groceries for a small family',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      imageUrl: 'path-to-image-2.jpg', // Placeholder image for Package 2
+      imageUrl: mixedGroceriesVeganImage,
     },
      {
-      title: 'Mixed groceries for a small family',
+      title: 'Mixed groceries for a small VEGAN family',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      imageUrl: 'path-to-image-3.jpg', // Placeholder image for Package 2
+      imageUrl: 'frontend/src/components/packages/vegan_family.jpeg', // Placeholder image for Package 2
     }, {
       title: 'Mixed groceries for a small family',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      imageUrl: 'path-to-image-4.jpg', // Placeholder image for Package 2
+      imageUrl: 'frontend/src/components/packages/mixed_groceries_family.jpeg', // Placeholder image for Package 2
     }, {
       title: 'Mixed groceries for a small family',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',

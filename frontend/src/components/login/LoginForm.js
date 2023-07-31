@@ -18,7 +18,7 @@ const LogInForm = ({ navigate, onClose, handleSuccessfulLogin, setUserId }) => {
       body: JSON.stringify({ email: email, password: password }),
     });
 
-    if (response.status !== 201) {
+    if (response.status === 200) {
       console.log("yay");
     } else {
       console.log("oop");
