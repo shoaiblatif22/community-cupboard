@@ -3,9 +3,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import './Orders.css'; // Make sure to import the orders.css file
+import './Checkout.css'; // Make sure to import the orders.css file
 
-const Orders = () => {
+const Checkout = () => {
   const initialValues = {
     name: '',
     address: {
@@ -122,5 +122,5 @@ const Orders = () => {
   );
 };
 
-export default Orders;
+export default Checkout;
 

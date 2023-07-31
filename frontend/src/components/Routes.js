@@ -9,7 +9,7 @@ import AboutUs from "./aboutUs/AboutUs";
 import ContactUs from "./contactUs/ContactUs";
 import Basket from "./Basket/basket";
 import Packages from "./packages/packages";
-import Orders from "./orders/Orders";
+import Checkout from "./Checkout/Checkout.js";
 
 import GetInvolved from "./getInvolved/getInvolved"
 import Notifications from "./notifications/notifications.js";
@@ -28,7 +28,7 @@ const AppRoutes = () => {
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/basket" element={<Basket />} />
         <Route path="/packages" element={<Packages />} />
-        <Route path="/orders" element={<Orders />} />
+        <Route path="/checkout" element={<Checkout/>} />
         <Route path="/notifications" element={<Notifications />} />
       </Routes>
   );
