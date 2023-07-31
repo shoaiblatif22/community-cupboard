@@ -1,4 +1,7 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import { Routes, Route } from "react-router-dom";
+import App from "./app/App.js";
+
 import SignUpForm from "./SignUp/SignUp";
 import LogInForm from "./login/LoginForm";
 import LogOutForm from "./login/logoutForm";
@@ -8,10 +11,16 @@ import Basket from "./Basket/basket";
 import Packages from "./packages/packages";
 import Orders from "./orders/Orders";
 
+import GetInvolved from "./getInvolved/getInvolved"
+import Notifications from "./notifications/notifications.js";
+
 const AppRoutes = () => {
   return (
-    <Router>
       <Routes>
+        <Route exact path="/" component={App} />
+        <Route path="/home" element={App} />
+        <Route path="/getinvolved" element={<GetInvolved />} />
+          
         <Route path="/signupform" element={<SignUpForm />} />
         <Route path="/login" element={<LogInForm />} />
         <Route path="/logout" element={<LogOutForm />} />
@@ -20,10 +29,9 @@ const AppRoutes = () => {
         <Route path="/basket" element={<Basket />} />
         <Route path="/packages" element={<Packages />} />
         <Route path="/orders" element={<Orders />} />
+        <Route path="/notifications" element={<Notifications />} />
       </Routes>
-    </Router>
   );
 };
 
 export default AppRoutes;
-

@@ -1,9 +1,10 @@
 // SignUp.js
 
 import React, { useState } from "react";
-import Axios from "axios";
+
 import "./SignUp.css"; // Import the corresponding CSS file
 import Modal from "../Modal/Modal";
+
 
 const SignUpForm = ({ onClose }) => {
   const [formData, setFormData] = useState({
@@ -21,16 +22,29 @@ const SignUpForm = ({ onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Make the API call to the backend
-    Axios.post("/user/register", formData)
+    // Make the API call to the backend using fetch
+    fetch("http://localhost:3000/user/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
       .then((response) => {
-        console.log(response.data.message); // Handle the response as needed
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data.message); // Handle the response as needed
+
         // Optionally, you can handle success here (e.g., show a success message, redirect, etc.)
         onClose(); // Close the modal on successful submission
       })
       .catch((error) => {
-        console.log(error.response.data.message); // Handle the error as needed
+
+        console.error("Error registering user:", error);
         // Optionally, you can handle the error here (e.g., show an error message)
       });
   };
@@ -90,5 +104,4 @@ const SignUpForm = ({ onClose }) => {
     </Modal>
   );
 };
-
 export default SignUpForm;
