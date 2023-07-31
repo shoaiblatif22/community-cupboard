@@ -175,11 +175,13 @@ const App = () => {
             animate="animate"
           />
         </div>
+        
 
         <AppRoutes /> 
         <Notifications />
         {isSignUpOpen && <SignUpForm onClose={handleCloseSignUp} />} {/* Render SignUpForm only when isSignUpOpen is true */}
         {isLogInOpen && <LogInForm onClose={handleCloseLogIn} />} 
+        
 
         {/* Add your other content here */}
        

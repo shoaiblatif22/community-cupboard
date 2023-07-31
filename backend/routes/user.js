@@ -8,6 +8,7 @@ const userController = require('../controllers/user');
 router.post('/register', userController.Create);
 
 router.post("/login", async (req, res) => {
+  console.log("This is the user router")
   const email = req.body.email;
   const password = req.body.password;
 
@@ -17,13 +18,17 @@ router.post("/login", async (req, res) => {
     return;
   }
 
-  if (!user.comparePassword(password)) {
-    res.status(401).json({ message: "Invalid email or password" });
-    return;
-  }
+  // if (!user.comparePassword(password)) {
+  //   res.status(401).json({ message: "Invalid email or password" });
+  //   return;
+  // }
 
-  const token = jwt.sign({ userId: user._id }, secret, { expiresIn: 30 });
-  res.json({ token });
+  //1
+  console.log("Success")
+
+  // const token = jwt.sign({ userId: user._id }, secret, { expiresIn: 30 });
+  // res.json({ token });
+  //2
 });
 
 module.exports = router;
