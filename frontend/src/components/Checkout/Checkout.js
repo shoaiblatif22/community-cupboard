@@ -1,11 +1,14 @@
-
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import './Checkout.css'; // Make sure to import the orders.css file
+import './Checkout.css';
 
 const Checkout = () => {
+  const location = useLocation();
+  const { selectedPackage } = location.state || {};
+
   const initialValues = {
     name: '',
     address: {
@@ -16,7 +19,7 @@ const Checkout = () => {
       postcode: '',
     },
     nearestLocation: '',
-    package: '',
+    package: selectedPackage?.title || '',
     deliveryPreference: '',
   };
 
@@ -34,9 +37,31 @@ const Checkout = () => {
     deliveryPreference: Yup.string().required('Please select a delivery preference'),
   });
 
-  const onSubmit = (values) => {
-    // Handle form submission and sending data to MongoDB Atlas via Express backend
-    console.log(values);
+  const onSubmit = async (values) => {
+    try {
+      const response = await fetch("/api/orders/create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user: values.name,
+          packages: values.package,
+          totalAmount: selectedPackage.price,
+        }),
+      });
+
+      if (response.status === 201) {
+        // Handle successful checkout, e.g., show a success message
+        console.log("Order placed successfully!");
+      } else {
+        // Handle errors in the response, e.g., show an error message
+        console.error("Error during checkout:", response.status);
+      }
+    } catch (error) {
+      // Handle any other errors that occurred during the checkout process
+      console.error("Error during checkout:", error);
+    }
   };
 
   return (
@@ -61,57 +86,9 @@ const Checkout = () => {
             <ErrorMessage name="address.doorNumber" component="div" className="error" />
           </div>
 
-          <div className="form-group">
-            <label htmlFor="firstLine">1st Line of Address</label>
-            <Field type="text" id="firstLine" name="address.firstLine" />
-            <ErrorMessage name="address.firstLine" component="div" className="error" />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="town">Town</label>
-            <Field type="text" id="town" name="address.town" />
-            <ErrorMessage name="address.town" component="div" className="error" />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="country">Country</label>
-            <Field type="text" id="country" name="address.country" />
-            <ErrorMessage name="address.country" component="div" className="error" />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="postcode">Postcode</label>
-            <Field type="text" id="postcode" name="address.postcode" />
-            <ErrorMessage name="address.postcode" component="div" className="error" />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="nearestLocation">Nearest Location</label>
-            <Field as="select" id="nearestLocation" name="nearestLocation">
-              <option value="">Select a nearest location</option>
-              {/* Add options for the towns in England here */}
-            </Field>
-            <ErrorMessage name="nearestLocation" component="div" className="error" />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="package">Package</label>
-            <Field as="select" id="package" name="package">
-              <option value="">Select a package</option>
-              {/* Add options for the packages here */}
-            </Field>
-            <ErrorMessage name="package" component="div" className="error" />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="deliveryPreference">Delivery Preference</label>
-            <Field as="select" id="deliveryPreference" name="deliveryPreference">
-              <option value="">Select a delivery preference</option>
-              <option value="collect">Collect</option>
-              <option value="delivery">Delivery</option>
-            </Field>
-            <ErrorMessage name="deliveryPreference" component="div" className="error" />
-          </div>
+          {/* Add other form fields here */}
+          {/* ... */}
+          {/* ... */}
 
           <button type="submit" className="submit-button">
             Submit Order
@@ -123,4 +100,3 @@ const Checkout = () => {
 };
 
 export default Checkout;
-
