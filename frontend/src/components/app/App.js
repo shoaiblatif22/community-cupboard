@@ -14,6 +14,7 @@ import Notifications from '../notifications/notifications';
 const App = () => {
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
   const navigate = useNavigate();
+  const [userId, setUserId] = useState(null);
 
   const handleSignUpButtonClick = () => {
     setIsSignUpOpen(true);
@@ -33,6 +34,9 @@ const App = () => {
   const handleCloseLogIn = () => {
     setIsLogInOpen(false);
   };
+
+  // const handleSuccessfulLogin = () => {
+  //   setIsUserLoggedIn(true);
 
   const handleHomeButtonClick = () => {
     navigate("/home"); // Use navigate function to navigate to "/aboutus" path
@@ -175,11 +179,13 @@ const App = () => {
             animate="animate"
           />
         </div>
+        
 
         <AppRoutes /> 
         <Notifications />
         {isSignUpOpen && <SignUpForm onClose={handleCloseSignUp} />} {/* Render SignUpForm only when isSignUpOpen is true */}
         {isLogInOpen && <LogInForm onClose={handleCloseLogIn} />} 
+        
 
         {/* Add your other content here */}
        
