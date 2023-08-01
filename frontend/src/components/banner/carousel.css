@@ -1,0 +1,24 @@
+.carousel {
+    position: relative;
+    width: 100vw;
+    /* Stretch the carousel across the screen */
+    height: 300px;
+    /* Set the desired height for the carousel */
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    /* To align the images in a row */
+    width: calc(100% * 3);
+    /* Make the carousel-images div 3 times wider to accommodate the images */
+}
+
+.carousel-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensure the images cover the entire container */
+}
+
+/* Other CSS styles for the carousel indicators, arrows, etc. can remain the same */
