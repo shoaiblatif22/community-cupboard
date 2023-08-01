@@ -13,7 +13,9 @@ import Carousel from "../banner/carousel";
 const App = () => {
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
   const navigate = useNavigate();
+  // eslint-disable-next-line
   const [userId, setUserId] = useState(null);
+  
 
   const handleSignUpButtonClick = () => {
     setIsSignUpOpen(true);
@@ -37,7 +39,7 @@ const App = () => {
   //   setIsUserLoggedIn(true);
 
   const handleHomeButtonClick = () => {
-    navigate("/home"); // Use navigate function to navigate to "/aboutus" path
+    navigate("/home");
   };
 
 

@@ -1,5 +1,6 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import "./carousel.css";
 
 const Carousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -59,7 +60,6 @@ const Carousel = ({ images }) => {
 
   const handlePrevious = () => {
     setDirection("left");
-
     setCurrentIndex((prevIndex) =>
       prevIndex - 1 < 0 ? images.length - 1 : prevIndex - 1
     );
@@ -70,9 +70,18 @@ const Carousel = ({ images }) => {
     setCurrentIndex(index);
   };
 
+  // Autoplay functionality
+  useEffect(() => {
+    const autoplayInterval = setInterval(() => {
+      handleNext();
+    }, 3000); // Set the interval duration here (3 seconds in this example)
+
+    return () => clearInterval(autoplayInterval); // Clear the interval on component unmount
+  }, [currentIndex]); // Will re-trigger the effect whenever currentIndex changes
+
   return (
     <div className="carousel">
-        <div className="carousel-images">
+      <div className="carousel-images">
         <AnimatePresence>
           <motion.img
             key={currentIndex}
@@ -132,4 +141,5 @@ const Carousel = ({ images }) => {
     </div>
   );
 };
+
 export default Carousel;
