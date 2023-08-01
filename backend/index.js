@@ -22,6 +22,7 @@ app.use('/notification', apiRouter);
 app.use('/order', apiRouter);
 app.use('/product', apiRouter)
 
+//we need to put each router on seperate variable
 
 async function run() {
 

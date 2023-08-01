@@ -10,7 +10,8 @@ const LogInForm = ({ navigate, onClose, handleSuccessfulLogin, setUserId }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    let response = await fetch("/tokens", {
+    let response = await fetch("http://localhost:3000/user/login", {
+      
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -18,19 +19,18 @@ const LogInForm = ({ navigate, onClose, handleSuccessfulLogin, setUserId }) => {
       body: JSON.stringify({ email: email, password: password }),
     });
 
-    if (response.status === 200) {
-      console.log("yay");
-    } else {
+    if (response.status !== 201) {
       console.log("oop");
+    } else {
+      console.log("yay");
       let data = await response.json();
       window.localStorage.setItem("token", data.token);
       const token = window.localStorage.getItem("token");
       const decodedToken = jwt_decode(token);
-      setUserId(decodedToken.user_id);
+      // setUserId(decodedToken.user_id);
       window.localStorage.setItem("userId", decodedToken.user_id);
       onClose(); // Close the form when the submission is successful
-      handleSuccessfulLogin();
-      navigate("/");
+      // handleSuccessfulLogin();
     }
   };
 
@@ -73,3 +73,7 @@ const LogInForm = ({ navigate, onClose, handleSuccessfulLogin, setUserId }) => {
 };
 
 export default LogInForm;
+
+
+//REST API - Create Data, GET Data, 
+//

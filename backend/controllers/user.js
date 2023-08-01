@@ -15,7 +15,8 @@ const UsersController = {
       bcrypt.hash(password, saltRounds, async (err, hashedPassword) => {
         if (err) {
           return res.status(500).json({ message: "Internal server error" });
-        }
+        } //instead of passing a res.status, allow it to continue if hash password
+        //matches the one in database
   
         const user = new User({
             
@@ -33,27 +34,26 @@ const UsersController = {
     }
   }
 
-// async function login(req, res) {
-//   const email = req.body.email;
-//   const password = req.body.password;
+async function login(req, res) {
+  const email = req.body.email;
+  const password = req.body.password;
 
-//   const user = await User.findOne({ email });
-//   if (!user) {
-//     res.status(401).json({ message: "Invalid email or password" });
-//     return;
-//   }
+  const user = await User.findOne({ email });
+  if (!user) {
+    res.status(401).json({ message: "Invalid email or password" });
+    return;
+  }
 
-//   if (!user.comparePassword(password)) {
-//     res.status(401).json({ message: "Invalid email or password" });
-//     return;
-//   }
+  if (!user.comparePassword(password)) {
+    res.status(401).json({ message: "Invalid email or password" });
+    return;
+  }
 
-//   const token = jwt.sign({ userId: user._id }, secret, { expiresIn: 30 });
-//   res.json({ token });
-// }
+  const token = jwt.sign({ userId: user._id }, secret, { expiresIn: 30 });
+  res.json({ token });
         
-//       });
-//     },
-// };
+}
+    
+
 
 module.exports = UsersController
