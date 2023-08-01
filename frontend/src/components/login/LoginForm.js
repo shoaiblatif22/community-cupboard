@@ -20,18 +20,17 @@ const LogInForm = ({ navigate, onClose, handleSuccessfulLogin, setUserId }) => {
     });
 
     if (response.status !== 201) {
-      console.log("yay");
-    } else {
       console.log("oop");
+    } else {
+      console.log("yay");
       let data = await response.json();
       window.localStorage.setItem("token", data.token);
       const token = window.localStorage.getItem("token");
       const decodedToken = jwt_decode(token);
-      setUserId(decodedToken.user_id);
+      // setUserId(decodedToken.user_id);
       window.localStorage.setItem("userId", decodedToken.user_id);
       onClose(); // Close the form when the submission is successful
-      handleSuccessfulLogin();
-      navigate("/");
+      // handleSuccessfulLogin();
     }
   };
 
