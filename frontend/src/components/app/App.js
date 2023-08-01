@@ -38,9 +38,9 @@ const App = () => {
   // const handleSuccessfulLogin = () => {
   //   setIsUserLoggedIn(true);
 
-  const handleHomeButtonClick = () => {
-    navigate("/home");
-  };
+  // const handleHomeButtonClick = () => {
+  //   navigate("/home");
+  // };
 
 
   const handleAboutButtonClick = () => {
@@ -73,14 +73,14 @@ const App = () => {
   };
 
   const images = [
-    "/images/bag_food.jpeg",
-    "/images/community-food.jpeg",
-    "/images/community.png",
-    "/images/food_bank1.jpeg",
-    "/images/food_bank2.webp",
-    "/images/food_bank3.jpeg",
-    "/images/food_bank4.webp",
-  ];
+  "/images/bag_food.jpeg",
+  "/images/community-food.jpeg",
+  "/images/community.png",
+  "/images/food_bank1.jpeg",
+  "/images/food_bank2.webp",
+  "/images/food_bank3.jpeg",
+  "/images/food_bank4.webp",
+];
 
   return (
     <div className="app-container">
