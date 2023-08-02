@@ -10,7 +10,7 @@ import ContactUs from "./contactUs/ContactUs";
 import Basket from "./Basket/basket";
 import Packages from "./Packages/packages";
 import Checkout from "./Checkout/Checkout";
-
+import Home from "./Home/Home"
 import GetInvolved from "./getInvolved/getInvolved"
 import Notifications from "./notifications/notifications.js";
 
@@ -18,7 +18,7 @@ const AppRoutes = () => {
   return (
     <Routes>
       <Route exact path="/" component={App} />
-      <Route path="/home" element={App} />
+      <Route path="/home" element={<Home />} />
       <Route path="/getinvolved" element={<GetInvolved />} />
 
       <Route path="/signupform" element={<SignUpForm />} />
