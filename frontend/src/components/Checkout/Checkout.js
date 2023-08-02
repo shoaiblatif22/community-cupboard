@@ -20,6 +20,7 @@ const Checkout = () => {
     },
     nearestLocation: '',
     package: selectedPackage?.title || '',
+    quantity: selectedPackage?.quantity || 1,
     deliveryPreference: '',
   };
 
@@ -34,12 +35,13 @@ const Checkout = () => {
     }),
     nearestLocation: Yup.string().required('Please select a nearest location'),
     package: Yup.string().required('Please select a package'),
+    quantity: Yup.number().integer('Quantity must be an integer').required('Please enter a quantity'),
     deliveryPreference: Yup.string().required('Please select a delivery preference'),
   });
 
-  const onSubmit = async (values) => {
+  const onSubmit = async (values, { setSubmitting }) => {
     try {
-      const response = await fetch("/api/orders/create", {
+      const response = await fetch("http://localhost:3000/api/orders/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -47,19 +49,18 @@ const Checkout = () => {
         body: JSON.stringify({
           user: values.name,
           packages: values.package,
-          totalAmount: selectedPackage.price,
+          totalAmount: selectedPackage.quantity,
         }),
       });
 
+      setSubmitting(false);
+
       if (response.status === 201) {
-        // Handle successful checkout, e.g., show a success message
         console.log("Order placed successfully!");
       } else {
-        // Handle errors in the response, e.g., show an error message
         console.error("Error during checkout:", response.status);
       }
     } catch (error) {
-      // Handle any other errors that occurred during the checkout process
       console.error("Error during checkout:", error);
     }
   };
