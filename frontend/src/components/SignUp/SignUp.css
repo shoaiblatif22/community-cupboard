@@ -41,7 +41,7 @@
     border-radius: 5px;
   }
   
-  button {
+  .signupButton {
     padding: 10px;
     background-color: #5097a0;
     color: #fff;
@@ -51,11 +51,11 @@
     transition: background-color 0.3s ease;
   }
   
-  button:hover {
+ .signupButton:hover {
     background-color: #5097a0;
   }
   
-  button:active {
+  .signupButton:active {
     transform: scale(0.95);
   }
   
