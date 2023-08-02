@@ -14,6 +14,7 @@ const Carousel = ({ images }) => {
     hiddenLeft: {
       x: "-100%",
       opacity: 0,
+      backgroundcolor:"#5097a0" 
     },
     visible: {
       x: "0",
@@ -26,14 +27,14 @@ const Carousel = ({ images }) => {
       opacity: 0,
       scale: 0.8,
       transition: {
-        duration: 0.5,
+        duration: 1,
       },
     },
   };
   const slidersVariants = {
     hover: {
       scale: 1.2,
-      backgroundColor: "#ff00008e",
+      backgroundColor: "#5097a0",
     },
   };
   const dotsVariants = {
@@ -47,7 +48,7 @@ const Carousel = ({ images }) => {
     },
     hover: {
       scale: 1.1,
-      transition: { duration: 0.2 },
+      transition: { duration: 0.3 },
     },
   };
 
@@ -74,7 +75,7 @@ const Carousel = ({ images }) => {
   useEffect(() => {
     const autoplayInterval = setInterval(() => {
       handleNext();
-    }, 3000); // Set the interval duration here (3 seconds in this example)
+    }, 7000); // Set the interval duration here (3 seconds in this example)
 
     return () => clearInterval(autoplayInterval); // Clear the interval on component unmount
   }, [currentIndex]); // Will re-trigger the effect whenever currentIndex changes
