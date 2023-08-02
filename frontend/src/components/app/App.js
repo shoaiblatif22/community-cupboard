@@ -68,6 +68,10 @@ const App = () => {
     navigate("/basket");
   };
 
+  const handleOrdersButtonClick = () => {
+    navigate("/orders");
+  };
+
   const buttonVariants = {
     whileHover: { scale: 1.1 }, // Scale the button up on hover
     whileTap: { scale: 0.9 }, // Scale the button down on tap
@@ -166,6 +170,14 @@ const App = () => {
             onClick={handleBasketButtonClick}
           >
             Basket
+          </motion.button>
+          <motion.button
+            variants={buttonVariants}
+            whileHover="whileHover"
+            whileTap="whileTap"
+            onClick={handleOrdersButtonClick}
+          >
+            Orders
           </motion.button>
         </div>
       </header>
