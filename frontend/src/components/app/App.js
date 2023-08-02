@@ -193,6 +193,7 @@ const App = () => {
 
         <AppRoutes /> 
         <Notifications />
+        
         {isSignUpOpen && <SignUpForm onClose={handleCloseSignUp} />} {/* Render SignUpForm only when isSignUpOpen is true */}
         {isLogInOpen && <LogInForm onClose={handleCloseLogIn} />} 
         

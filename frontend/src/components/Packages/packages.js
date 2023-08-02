@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Packages.css';
 import mixedGroceriesImage from '../Packages/mixed_groceries.jpeg';
 import mixedGroceriesVeganImage from '../Packages/mixed_groceries_vegan.webp';
+import mixed_groceries_family from '../Packages/mixed_groceries_family.jpeg'
 import { useNavigate } from 'react-router-dom';
 
 const Packages = () => {
@@ -13,37 +14,37 @@ const Packages = () => {
       title: 'Mixed groceries for 1',
       description: 'Assortment of household goods and food for 1.',
       imageUrl: mixedGroceriesImage,
-      price: '$25', // Add the price for Package 1
+      
     },
     {
-      title: 'Mixed groceries for a small family',
+      title: 'Vegan groceries package for a small family',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       imageUrl: mixedGroceriesVeganImage,
-      price: '$40', // Add the price for Package 2
+    
     },
     {
       title: 'Mixed groceries for a small VEGAN family',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       imageUrl: 'frontend/src/components/packages/vegan_family.jpeg',
-      price: '$50', // Add the price for Package 3
+      
     },
     {
       title: 'Mixed groceries for a small family',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       imageUrl: 'frontend/src/components/packages/mixed_groceries_family.jpeg',
-      price: '$30', // Add the price for Package 4
+      
     },
     {
       title: 'Mixed groceries for a small family',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      imageUrl: 'path-to-image-5.jpg',
-      price: '$35', // Add the price for Package 5
+      imageUrl: mixed_groceries_family,
+      
     },
     {
       title: 'Mixed groceries for a small family',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       imageUrl: 'path-to-image-6.jpg',
-      price: '$45', // Add the price for Package 6
+      
     },
     // Add other packages here
   ];
