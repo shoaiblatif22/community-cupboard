@@ -96,10 +96,12 @@ body {
   margin-right: 5px;
 }
 
-.logo-container {
+.carousel-container {
   text-align: center;
   background-color: #53778161;
   padding: 20px;
+  width: 100%;
+  
 }
 
 .logo-container img {

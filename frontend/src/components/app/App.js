@@ -124,7 +124,7 @@ const App = () => {
             whileTap="whileTap"
             onClick={handleSignUpButtonClick} // Open the sign-up form when clicked
           >
-            Signup
+            Sign Up
           </motion.button>
           <motion.button
             variants={buttonVariants}
@@ -172,16 +172,9 @@ const App = () => {
       {/* Main content section */}
       <main>
         
-        <div className="logo-container">
+        <div className="carousel-container">
           <Carousel images={images} />
 
-          {/* Add your logo image here */}
-          {/* <motion.img
-            src={CClogo}
-            alt="Logo"
-            variants={logoVariants}
-            animate="animate"
-          /> */}
         </div>
         
 
