@@ -1,6 +1,6 @@
 
 import { Routes, Route } from "react-router-dom";
-import App from "./app/App.js";
+// import App from "./app/App.js";
 
 import SignUpForm from "./SignUp/SignUp";
 import LogInForm from "./login/LoginForm";
@@ -17,7 +17,7 @@ import Notifications from "./notifications/notifications.js";
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route exact path="/" component={App} />
+      <Route exact path="/" element={<Home />} />
       <Route path="/home" element={<Home />} />
       <Route path="/getinvolved" element={<GetInvolved />} />
 
