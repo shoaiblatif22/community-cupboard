@@ -171,8 +171,10 @@ const App = () => {
 
       {/* Main content section */}
       <main>
-        <Carousel images={images} />
+        
         <div className="logo-container">
+          <Carousel images={images} />
+
           {/* Add your logo image here */}
           {/* <motion.img
             src={CClogo}
