@@ -47,7 +47,11 @@ const Checkout = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          user: values.name,
+          user: {
+            name: values.name,
+            address: values.address,
+            postcode: values.address.postcode, // Get the postcode from the nested object
+          },
           packages: values.package,
           totalAmount: selectedPackage.quantity,
         }),
@@ -85,6 +89,30 @@ const Checkout = () => {
             <label htmlFor="doorNumber">Door Number/Name</label>
             <Field type="text" id="doorNumber" name="address.doorNumber" />
             <ErrorMessage name="address.doorNumber" component="div" className="error" />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="firstLine">First Line of Address</label>
+            <Field type="text" id="firstLine" name="address.firstLine" />
+            <ErrorMessage name="address.firstLine" component="div" className="error" />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="town">Town</label>
+            <Field type="text" id="town" name="address.town" />
+            <ErrorMessage name="address.town" component="div" className="error" />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="country">Country</label>
+            <Field type="text" id="country" name="address.country" />
+            <ErrorMessage name="address.country" component="div" className="error" />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="postcode">Postcode</label>
+            <Field type="text" id="postcode" name="address.postcode" />
+            <ErrorMessage name="address.postcode" component="div" className="error" />
           </div>
 
           {/* Add other form fields here */}
