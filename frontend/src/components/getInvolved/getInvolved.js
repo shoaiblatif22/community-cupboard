@@ -12,7 +12,7 @@ const GetInvolved = () => {
         </div>
         <div className="get-involved-text">
           <p>
-            If you share our passion for making a positive impact, consider becoming a volunteer. Your time and effort can bring smiles to the faces of those facing challenges, making a meaningful difference in their lives.
+          If you share our passion for making a positive impact, consider becoming a volunteer. Your time and effort can bring smiles to the faces of those facing challenges, making a meaningful difference in their lives. Together, we can create a brighter future for our community. Join us today and be a part of something incredible!
           </p>
         </div>
       </div>

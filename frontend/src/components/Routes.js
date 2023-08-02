@@ -13,6 +13,7 @@ import Checkout from "./Checkout/Checkout";
 import Home from "./Home/Home"
 import GetInvolved from "./getInvolved/getInvolved"
 import Notifications from "./notifications/notifications.js";
+import Orders from "./orders/orders";
 
 const AppRoutes = () => {
   return (
@@ -20,7 +21,7 @@ const AppRoutes = () => {
       <Route exact path="/" element={<Home />} />
       <Route path="/home" element={<Home />} />
       <Route path="/getinvolved" element={<GetInvolved />} />
-
+      <Route path="/orders" element={<Orders />} />
       <Route path="/signupform" element={<SignUpForm />} />
       <Route path="/login" element={<LogInForm />} />
       <Route path="/logout" element={<LogOutForm />} />

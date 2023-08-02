@@ -15,7 +15,8 @@ h2 {
 .packages-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 20px;
+    grid-gap: 50px;
+    /* Increased the gap between containers to 30 pixels */
 }
 
 .package-item {
@@ -23,15 +24,25 @@ h2 {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* Added */
+    flex-direction: column;
+    /* Added */
 }
 
 .package-image {
     text-align: center;
+    flex: 1;
+    /* Added */
 }
 
 .package-image img {
     max-width: 100%;
+    height: 200px;
+    /* Set a fixed height for the images */
     border-radius: 8px;
+    object-fit: cover;
+    /* To ensure images don't stretch */
 }
 
 .package-info {
@@ -53,19 +64,23 @@ h2 {
     margin-bottom: 10px;
 }
 
-button {
+.packageButton {
     padding: 10px 20px;
-    background-color: #1abc9c;
-    color: #fff;
+    background-color: #5097a0;
+    color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
+    margin-top: auto;
+    /* Align buttons to the bottom of the container */
+    align-self: center;
+    /* Center align the buttons */
 }
 
-button:hover {
-    background-color: #148f77;
+.packageButton:hover {
+    background-color: #a315c063;
 }
 
 /* Animation keyframes */

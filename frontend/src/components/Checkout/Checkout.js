@@ -20,6 +20,7 @@ const Checkout = () => {
     },
     nearestLocation: '',
     package: selectedPackage?.title || '',
+    quantity: selectedPackage?.quantity || 1,
     deliveryPreference: '',
   };
 
@@ -34,32 +35,36 @@ const Checkout = () => {
     }),
     nearestLocation: Yup.string().required('Please select a nearest location'),
     package: Yup.string().required('Please select a package'),
+    quantity: Yup.number().integer('Quantity must be an integer').required('Please enter a quantity'),
     deliveryPreference: Yup.string().required('Please select a delivery preference'),
   });
 
-  const onSubmit = async (values) => {
+  const onSubmit = async (values, { setSubmitting }) => {
     try {
-      const response = await fetch("/api/orders/create", {
+      const response = await fetch("http://localhost:3000/api/orders/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          user: values.name,
+          user: {
+            name: values.name,
+            address: values.address,
+            postcode: values.address.postcode, // Get the postcode from the nested object
+          },
           packages: values.package,
-          totalAmount: selectedPackage.price,
+          totalAmount: selectedPackage.quantity,
         }),
       });
 
+      setSubmitting(false);
+
       if (response.status === 201) {
-        // Handle successful checkout, e.g., show a success message
         console.log("Order placed successfully!");
       } else {
-        // Handle errors in the response, e.g., show an error message
         console.error("Error during checkout:", response.status);
       }
     } catch (error) {
-      // Handle any other errors that occurred during the checkout process
       console.error("Error during checkout:", error);
     }
   };
@@ -84,6 +89,30 @@ const Checkout = () => {
             <label htmlFor="doorNumber">Door Number/Name</label>
             <Field type="text" id="doorNumber" name="address.doorNumber" />
             <ErrorMessage name="address.doorNumber" component="div" className="error" />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="firstLine">First Line of Address</label>
+            <Field type="text" id="firstLine" name="address.firstLine" />
+            <ErrorMessage name="address.firstLine" component="div" className="error" />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="town">Town</label>
+            <Field type="text" id="town" name="address.town" />
+            <ErrorMessage name="address.town" component="div" className="error" />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="country">Country</label>
+            <Field type="text" id="country" name="address.country" />
+            <ErrorMessage name="address.country" component="div" className="error" />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="postcode">Postcode</label>
+            <Field type="text" id="postcode" name="address.postcode" />
+            <ErrorMessage name="address.postcode" component="div" className="error" />
           </div>
 
           {/* Add other form fields here */}

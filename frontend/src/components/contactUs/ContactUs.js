@@ -9,11 +9,11 @@ const ContactUs = () => {
       <div className="contact-info">
         <div className="contact-item">
           <i className="fa fa-map-marker"></i>
-          <p>1234 Elm Street<br />Your City, State<br />Postal Code</p>
+          <p>1 Community Lane<br />Oxford, Oxfordshire. OX1 1XX<br />Postal Code</p>
         </div>
         <div className="contact-item">
           <i className="fa fa-phone"></i>
-          <p>+1 (123) 456-7890</p>
+          <p>+44 711223433</p>
         </div>
         <div className="contact-item">
           <i className="fa fa-envelope"></i>
