@@ -1,0 +1,67 @@
+/* carousel.css */
+.carousel {
+    position: relative;
+    width: 100%;
+    /* Stretch the carousel across the screen */
+    height: 400px;
+    /* Set the desired height for the carousel */
+    overflow: hidden;
+}
+
+.carousel-images {
+    position: relative;
+    border-radius: 10px;
+    height: 400px;
+    /* Remove max-width and margin properties */
+    overflow: hidden;
+}
+
+.carousel-images img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: #589289 solid 2px;
+}
+
+/* Other CSS styles for the carousel indicators, arrows, etc. can remain the same */
+.carousel-indicator {
+    /* Update the dot color */
+    color: #5097a0;
+}
+
+.dot {
+    background-color: #333;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.active {
+    background-color: #589289;
+}
+
+.left,
+.right {
+  background-color: transparent; /* Set background color to transparent */
+  color: #589289;
+  padding: 10px 8px 8px 13px;
+  margin: 0 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 10px;
+  height: 25px;
+  width: 25px;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+/* Other CSS styles for the carousel indicators, arrows, etc. can remain the same */

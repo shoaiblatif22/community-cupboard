@@ -1,20 +1,22 @@
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import AppRoutes from "../Routes";
-import './App.css'; // Import the corresponding CSS file
+import "./App.css";
 import { motion } from "framer-motion";
 import CClogo from "./cc-logo.jpg.png";
 import SignUpForm from "../SignUp/SignUp.js";
 import LogInForm from "../login/LoginForm";
-import Notifications from '../notifications/notifications';
+import Notifications from "../notifications/notifications";
+import Carousel from "../banner/carousel";
 
 
 const App = () => {
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
   const navigate = useNavigate();
+  // eslint-disable-next-line
   const [userId, setUserId] = useState(null);
+  
 
   const handleSignUpButtonClick = () => {
     setIsSignUpOpen(true);
@@ -25,7 +27,6 @@ const App = () => {
   };
 
   const [isLogInOpen, setIsLogInOpen] = useState(false);
- 
 
   const handleLogInButtonClick = () => {
     setIsLogInOpen(true);
@@ -38,47 +39,53 @@ const App = () => {
   // const handleSuccessfulLogin = () => {
   //   setIsUserLoggedIn(true);
 
-  const handleHomeButtonClick = () => {
-    navigate("/home"); // Use navigate function to navigate to "/aboutus" path
-  };
+  // const handleHomeButtonClick = () => {
+  //   navigate("/home");
+  // };
 
 
-   const handleAboutButtonClick = () => {
+  const handleAboutButtonClick = () => {
     navigate("/aboutus"); // Use navigate function to navigate to "/aboutus" path
   };
 
   const handleContactUsButtonClick = () => {
-    navigate("/contactus")
+    navigate("/contactus");
   };
 
   const handleGetInvolvedButtonClick = () => {
-    navigate("/getinvolved")
+    navigate("/getinvolved");
   };
 
   const handleNotificationsButtonClick = () => {
-    navigate("/notifications")
+    navigate("/notifications");
   };
 
   const handlePackagesButtonClick = () => {
-    navigate("/packages")
+    navigate("/packages");
   };
 
   const handleBasketButtonClick = () => {
-    navigate("/basket")
+    navigate("/basket");
+  };
+
+  const handleOrdersButtonClick = () => {
+    navigate("/orders");
   };
 
   const buttonVariants = {
     whileHover: { scale: 1.1 }, // Scale the button up on hover
-    whileTap: { scale: 0.9 }    // Scale the button down on tap
+    whileTap: { scale: 0.9 }, // Scale the button down on tap
   };
 
-  const logoVariants = {
-    animate: {
-      scale: [1, 2, 2, 1, 1],
-      rotate: [0, 0, 270, 270, 0],
-      borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-    }
-  };
+  const images = [
+  "/images/bag_food.jpeg",
+  "/images/community-food.jpeg",
+  "/images/community.png",
+  "/images/food_bank1.jpeg",
+  "/images/food_bank2.webp",
+  "/images/food_bank3.jpeg",
+  "/images/food_bank4.webp",
+];
 
   return (
     <div className="app-container">
@@ -86,26 +93,25 @@ const App = () => {
       <header className="header-container">
         <div className="header-left">
           {/* Home button */}
-          <motion.button
-            className="header-button"
-            variants={buttonVariants}
-            whileHover="whileHover"
-            whileTap="whileTap"
-            onClick={handleHomeButtonClick}
-          >
-            Home
-          </motion.button>
+          <a href="/home">
+            <img
+              src={CClogo}
+              alt="Logo"
+              style={{
+                width: "250px", // Adjust the width of the logo as per your preference
+                height: "auto", // This will maintain the aspect ratio
+              }}
+            />
+          </a>
         </div>
         <div className="header-right">
           {/* Rest of the buttons */}
-
-            <motion.button
+          <motion.button
             variants={buttonVariants}
             whileHover="whileHover"
             whileTap="whileTap"
             onClick={handleAboutButtonClick}
-  
-          > 
+          >
             About
           </motion.button>
           <motion.button
@@ -123,7 +129,7 @@ const App = () => {
             whileTap="whileTap"
             onClick={handleSignUpButtonClick} // Open the sign-up form when clicked
           >
-            Signup
+            Sign Up
           </motion.button>
           <motion.button
             variants={buttonVariants}
@@ -157,7 +163,7 @@ const App = () => {
           >
             Packages
           </motion.button>
-           <motion.button
+          <motion.button
             variants={buttonVariants}
             whileHover="whileHover"
             whileTap="whileTap"
@@ -165,19 +171,23 @@ const App = () => {
           >
             Basket
           </motion.button>
+          <motion.button
+            variants={buttonVariants}
+            whileHover="whileHover"
+            whileTap="whileTap"
+            onClick={handleOrdersButtonClick}
+          >
+            Orders
+          </motion.button>
         </div>
       </header>
 
       {/* Main content section */}
       <main>
-        <div className="logo-container">
-          {/* Add your logo image here */}
-          <motion.img
-            src={CClogo}
-            alt="Logo"
-            variants={logoVariants}
-            animate="animate"
-          />
+        
+        <div className="carousel-container">
+          <Carousel images={images} />
+
         </div>
         
 
@@ -188,7 +198,6 @@ const App = () => {
         
 
         {/* Add your other content here */}
-       
       </main>
     </div>
   );

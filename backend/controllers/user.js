@@ -8,6 +8,7 @@ const saltRounds = 10; // Number of salt rounds for bcrypt hashing
 
 const UsersController = {
     Create: (req, res) => {
+      console.log(req, res)
       const { first_name, last_name, full_address, email, password} = req.body;
   
       // Generate a hash for the password
@@ -28,6 +29,7 @@ const UsersController = {
   
         
         const savedUser = await user.save()
+        return res.status(200).json({ message: "User created!" });
       });
     }
   }
