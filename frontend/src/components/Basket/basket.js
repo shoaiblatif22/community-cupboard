@@ -20,7 +20,7 @@ const Basket = ({ selectedPackage, handleCheckout }) => {
         <p>Your basket is empty.</p>
       )}
       {selectedPackage && (
-        <button onClick={handleCheckout}>Checkout</button>
+        <button className='basketButton' onClick={handleCheckout}>Checkout</button>
       )}
     </div>
   );
