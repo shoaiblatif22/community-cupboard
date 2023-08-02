@@ -13,7 +13,7 @@ const Basket = ({ selectedPackage, handleCheckout }) => {
           <div className="selected-package-info">
             <h3>{selectedPackage.title}</h3>
             <p>{selectedPackage.description}</p>
-            <p className="package-price">{selectedPackage.price}</p>
+            <p className="package-quantity">{selectedPackage.quantity}</p>
           </div>
         </div>
       ) : (
