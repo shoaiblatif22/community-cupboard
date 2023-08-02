@@ -10,6 +10,7 @@ import LogInForm from "../login/LoginForm";
 import Notifications from "../notifications/notifications";
 import Carousel from "../banner/carousel";
 
+
 const App = () => {
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
   const navigate = useNavigate();

@@ -45,7 +45,7 @@ body {
 
 .header-left button:active {
   /* Add active (click) effect if desired */
-  background-color: #5097a0;
+  background-color: #932088;
 }
 
 /* Center the text in the button */
@@ -70,13 +70,15 @@ body {
   background-color: white;
   color: #5097a0;
   font-size: larger;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   border: none;
   padding: 8px 16px;
   cursor: pointer;
   border-radius: 4px;
   margin-left: 5px;
   /* Adjust this value to add spacing between buttons */
+  white-space: nowrap;
+  /* Add this property to prevent line breaks */
 }
 
 /* Push the buttons to the right side */
