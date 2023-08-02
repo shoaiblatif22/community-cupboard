@@ -49,9 +49,9 @@ textarea {
     height: 150px;
 }
 
-button {
+.contact-formButton{
     padding: 10px 20px;
-    background-color: #1abc9c;
+    background-color: #5097a0;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -60,8 +60,8 @@ button {
     transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #148f77;
+.contact-formButton:hover {
+    background-color: #754283;
 }
 
 /* Animation keyframes */
