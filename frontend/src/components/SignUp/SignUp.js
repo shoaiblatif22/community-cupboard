@@ -97,7 +97,7 @@ const SignUpForm = ({ onClose }) => {
               placeholder="Full Address"
               required
             />
-            <button type="submit">Sign Up</button>
+            <button className="signupButton" type="submit">Sign Up</button>
           </form>
         </div>
       </div>

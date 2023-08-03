@@ -20,6 +20,14 @@
   .signup-form {
     margin-top: 20px;
   }
+
+  .signup-form input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
   
   form {
     display: flex;
@@ -33,9 +41,9 @@
     border-radius: 5px;
   }
   
-  button {
+  .signupButton {
     padding: 10px;
-    background-color: #007bff;
+    background-color: #5097a0;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -43,11 +51,11 @@
     transition: background-color 0.3s ease;
   }
   
-  button:hover {
-    background-color: #0056b3;
+ .signupButton:hover {
+    background-color: #5097a0;
   }
   
-  button:active {
+  .signupButton:active {
     transform: scale(0.95);
   }
   

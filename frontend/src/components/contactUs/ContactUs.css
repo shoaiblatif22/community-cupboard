@@ -3,7 +3,6 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    animation: fadeIn 1s;
 }
 
 h1 {
@@ -12,32 +11,42 @@ h1 {
     margin-bottom: 20px;
 }
 
+.contact-Us {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #666;
+}
+
 .contact-info {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    /* Adjust the gap value to your preference */
+    text-align: center;
     margin-bottom: 30px;
 }
 
 .contact-item {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
 }
 
 .contact-item i {
     font-size: 24px;
-    margin-bottom: 10px;
 }
 
-.contact-form {
-    text-align: center;
+.contact-item p {
+    font-size: 14px;
+    /* Adjust the font size to your preference */
+    color: #666;
+    /* Use the same color as the p tag */
 }
 
-form {
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-input,
-textarea {
+.contact-form input,
+.contact-form textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -49,9 +58,9 @@ textarea {
     height: 150px;
 }
 
-button {
+.contactUsButton {
     padding: 10px 20px;
-    background-color: #1abc9c;
+    background-color: #5097a0;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -60,8 +69,8 @@ button {
     transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #148f77;
+.contactUsButton:hover {
+    background-color: #754283;
 }
 
 /* Animation keyframes */
@@ -75,4 +84,55 @@ button:hover {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Center the Contact Us button on the page */
+.contactus {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Apply the same styles from getInvolved.css to the contact form */
+
+.contact-form {
+    text-align: center;
+}
+
+.contact-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.contact-form form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form textarea {
+    height: 150px;
+}
+
+.contact-formButton {
+    padding: 10px 20px;
+    background-color: #5097a0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.contact-formButton:hover {
+    background-color: #754283;
 }
